@@ -2,7 +2,7 @@
 
 == Features
 
-Easy and simple to use Teragrep Authenticator for Kafka.
+Easy and simple to use Teragrep Authenticator for Apache Kafka.
 
 == Configuration
 

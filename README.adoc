@@ -1,35 +1,40 @@
-// Before publishing your new repository:
-// 1. Write the readme file
-// 2. Update the issues link in Contributing section in the readme file
-// 3. Update the discussion link in config.yml file in .github/ISSUE_TEMPLATE directory
-
-= repo-template
-
-// Add a short description of your project. Tell what your project does and what it's used for.
-
-This is a template repository for Teragrep organization.
+= Teragrep Authentication Module for Apache Kafka
 
 == Features
 
-// List your project's features
+Easy and simple to use Teragrep Authenticator for Kafka.
+
+== Configuration
+
+[text]
+----
+listeners=EXTERNAL://:9092
+----
+
+`server.callback.handler.class` sets it for broker clients
+
+`client.callback.handler.class` it for non-broker clients
+
+[text]
+----
+listener.name.external.plain.sasl.server.callback.handler.class=com.teragrep.kaf_05.TeragrepAuthenticateCallbackHandler
+listener.name.external.plain.sasl.client.callback.handler.class=com.teragrep.kaf_05.TeragrepAuthenticateCallbackHandler
+----
 
 == Documentation
 
 See the official documentation on https://docs.teragrep.com[docs.teragrep.com].
 
-== Limitations
+== How to use
 
-// If your project has limitations, please list them. Otherwise remove this section.
-
-== How to [compile/use/implement]
-
-// add instructions how people can start to use your project
+[text]
+----
+CLASSPATH="/opt/teragrep/kaf_05/share/kaf_05.jar"
+----
 
 == Contributing
 
-// Change the repository name in the issues link to match with your project's name
-
-You can involve yourself with our project by https://github.com/teragrep/repo-template/issues/new/choose[opening an issue] or submitting a pull request.
+You can involve yourself with our project by https://github.com/teragrep/kaf_05/issues/new/choose[opening an issue] or submitting a pull request.
 
 Contribution requirements:
 

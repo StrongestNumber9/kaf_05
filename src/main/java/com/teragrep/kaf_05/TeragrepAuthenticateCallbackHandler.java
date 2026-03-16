@@ -176,7 +176,9 @@ public final class TeragrepAuthenticateCallbackHandler implements AuthenticateCa
         try {
             final BufferedReader identitySuffixReader = new BufferedReader(new FileReader(identitySuffixPath));
             IdentitySuffix identitySuffixObj = gson.fromJson(identitySuffixReader, IdentitySuffix.class);
-            identitySuffixString = identitySuffixObj.identitySuffix;
+            if (identitySuffixObj.identitySuffix != null) {
+                identitySuffixString = identitySuffixObj.identitySuffix;
+            }
         }
         catch (FileNotFoundException ignored) {
 

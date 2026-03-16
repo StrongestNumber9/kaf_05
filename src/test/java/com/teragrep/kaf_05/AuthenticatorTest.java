@@ -118,4 +118,16 @@ public class AuthenticatorTest {
         Assertions
                 .assertTrue(tcach.authenticate("trusted-5", "nPBSgvBZVGRQ2Zu8TKItH9bElr0eaosYC0n6BTPqlok".toCharArray()));
     }
+
+    @Test
+    public void testNullIdentitySuffix() {
+        TeragrepAuthenticateCallbackHandler tcach = new TeragrepAuthenticateCallbackHandler();
+        tcach
+                .configure(
+                        "src/test/resources/credentials.json", "src/test/resources/credentials.writer.json",
+                        "src/test/resources/credentials.cluster.json", "src/test/resources/identitySuffix.null.json"
+                );
+        Assertions
+                .assertTrue(tcach.authenticate("trusted-5", "nPBSgvBZVGRQ2Zu8TKItH9bElr0eaosYC0n6BTPqlok".toCharArray()));
+    }
 }
